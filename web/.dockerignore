@@ -1,0 +1,14 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore virtual environment
+.env
+.DB_Store
+
+# Ignore IDE-specific files
+.vscode/
+
+#local env
+__pycache__/
+*.py[cod]
+*$ps.class
