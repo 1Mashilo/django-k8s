@@ -6,3 +6,6 @@ venv/
 
 # Ignore IDE-specific files
 .vscode/
+
+#local env
+web/.env
