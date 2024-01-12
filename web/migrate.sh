@@ -1,7 +1,10 @@
 #!/bin/bash
 
-SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL:-"christophermashilo@gmail.com"}
-cd /app/
+# Run migrations
+/app/venv/bin/python manage.py migrate --noinput
 
-/opt/venv/bin/python manage.py migrate --noinput
-/opt/venv/bin/python manage.py createsuperuser --email "$SUPERUSER_EMAIL" --noinput || true
+# Create superuser (redundant if entrypoint.sh handles it)
+/app/venv/bin/python manage.py createsuperuser --email "$SUPERUSER_EMAIL" --noinput || true
+
+# Exit with success to signal completion
+exit 0
